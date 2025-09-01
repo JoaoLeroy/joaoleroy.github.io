@@ -285,3 +285,11 @@ footer {
   max-height: 90vh; /* Limita a altura do conteúdo do modal */
   overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for grande */
 }
+
+/* Estilizando o texto da legenda */
+.modal-content figcaption {
+  font-size: 0.9em; /* Tamanho da fonte um pouco menor */
+  font-style: italic; /* Adiciona um toque de estilo */
+  text-align: center; /* Centraliza o texto da legenda */
+  padding: 0 10px; /* Adiciona um pequeno padding nas laterais */
+}

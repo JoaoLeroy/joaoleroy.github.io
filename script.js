@@ -51,3 +51,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // ... (o seu código existente para os modais) ...
+
+  const themeToggleButton = document.getElementById("theme-toggle");
+  const body = document.body;
+  const localStorageKey = "themePreference";
+
+  // Função para aplicar o tema salvo no localStorage
+  function applySavedTheme() {
+    const savedTheme = localStorage.getItem(localStorageKey);
+    if (savedTheme === "dark") {
+      body.classList.add("dark-mode");
+    } else {
+      body.classList.remove("dark-mode");
+    }
+  }
+
+  // Aplica o tema na primeira vez que a página é carregada
+  applySavedTheme();
+
+  // Função para alternar o tema quando o botão é clicado
+  themeToggleButton.addEventListener("click", function () {
+    body.classList.toggle("dark-mode");
+
+    // Salva a preferência do usuário no localStorage
+    if (body.classList.contains("dark-mode")) {
+      localStorage.setItem(localStorageKey, "dark");
+    } else {
+      localStorage.setItem(localStorageKey, "light");
+    }
+  });
+});
